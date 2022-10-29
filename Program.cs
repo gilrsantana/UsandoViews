@@ -2,6 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
 var app = builder.Build();
+
 app.UseDeveloperExceptionPage();
 app.UseStaticFiles();
 app.UseRouting();
@@ -11,11 +12,9 @@ app.UseEndpoints(endpoints =>
 	// endpoints.MapControllerRoute("Default", 
 	// "{controller=Home}/{action=Index}/{}id?");
 
-	// Define a rota padrão como a utilizada 
+	// Define a rota padrão como a rota utilizada 
 	// "{controller=Home}/{action=Index}/{}id?"
 	endpoints.MapDefaultControllerRoute();
 });
-
-app.MapGet("/", () => "Hello World!");
 
 app.Run();
