@@ -38,6 +38,10 @@ app.UseEndpoints(endpoints =>
 
 app.Run();
 ```
+- Adicionar a ferramenta libman
+```
+dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+```
 
 - Adicionar, através do `libman`, a referência para utilizar bibliotecas externas ao projeto.
 ```
