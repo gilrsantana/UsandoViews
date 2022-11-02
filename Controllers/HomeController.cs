@@ -11,9 +11,14 @@ namespace UsandoViews.Controllers
 			return View();
 		}
 
-        public IActionResult Cadastrar()
+        public IActionResult Cadastrar(int? id)
         {
-            return View("FormUsuario", Usuario.Listagem.Single(u => u.Id == 1));
+            if(id.HasValue && Usuario.Listagem.Any<Usuario>(u => u.Id == id))
+            {
+                var usuario = Usuario.Listagem.Single<Usuario>(u => u.Id == id);
+                return View(usuario);
+            }
+            return View();
         }
     }
 }
